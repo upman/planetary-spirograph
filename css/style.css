@@ -1,0 +1,50 @@
+body {
+	background-color: black;
+}
+
+#earth, #venus {
+	stroke: steelblue !important;
+	fill: steelblue;
+}
+
+.orbit {
+	stroke: #80DEEA;
+}
+
+path {
+	stroke: white;
+	stroke-width: 0.2;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+svg {
+	display: block;
+	margin: auto;
+}
+
+#container {
+	height: 100%;
+	width: 80vw;
+}
+
+#panel {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 20vw;
+	background-color: white;
+	padding: 10px 10px 10px 10px;
+}
+
+#fork {
+	position: absolute;
+	bottom: 20px;
+	margin: auto;
+}

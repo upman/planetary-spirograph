@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Planets</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/TangleKit.css">
+</head>
+<body>
+	<div id="container"></div>
+	<div id="panel">
+		<h1>Planetary Spirograph</h1>
+		<p>Inspired by <a href="https://www.reddit.com/r/space/comments/3dpp0v/8_earth_years_are_roughly_equal_to_13_venus_years/">this</a> post on Reddit.    			Interact with the visualisisation by fiddling with the parameters below.</p>
+		<p><span>Interval: <span data-var="interval" data-min="25" data-max="200" class="TKAdjustableNumber" data-reset-spirograph="false"> milliseconds</span></span></p>
+		<p><span>Earth velocity: <span data-var="earthVelocity" data-min="5" data-max="200" class="TKAdjustableNumber"> rad / iter</span></span></p>
+		<p><span>Venus velocity: <span data-var="venusVelocity" data-min="5" data-max="200" class="TKAdjustableNumber"> rad / iter</span></span></p>
+		<p><span>Earth orbit radius: <span data-var="earthOrbitRadius" data-min="5" data-max="200" class="TKAdjustableNumber"> million kms</span></span></p>
+		<p><span>Venus orbit radius: <span data-var="venusOrbitRadius" data-min="5" data-max="200" class="TKAdjustableNumber"> million kms</span></span></p>
+		<p><span>Scale by: <span data-var="scale" data-min="1" data-max="2.5" data-step="0.2" data-format="%.1f" class="TKAdjustableNumber"></span></span></p>
+		<a id="fork" href="">Fork on Github</a>
+	</div>
+	<script src="js/raphael.min.js"></script>
+	<script src="js/tangle.js"></script>
+	<script src="js/mootools.js"></script>
+	<script src="js/BVTouchable.js"></script>
+	<script src="js/sprintf.js"></script>
+	<script src="js/TangleKit.js"></script>
+	<script src="js/planets.js"></script>
+</body>
+</html>
