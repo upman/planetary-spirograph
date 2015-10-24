@@ -12,8 +12,7 @@ body {
 }
 
 path {
-	stroke: white;
-	stroke-width: 0.2;
+	stroke-width: 0.3;
 }
 
 html, body {
@@ -45,6 +44,6 @@ svg {
 
 #fork {
 	position: absolute;
-	bottom: 20px;
+	bottom: 3px;
 	margin: auto;
 }
