@@ -34,7 +34,19 @@ var parameters = {
 		"new-value" : null
 	},
 	"color" : {
-		"randomFunc" : function(){return '#'+Math.floor(Math.random()*16777215).toString(16);},
+		"randomFunc" : function(){
+			// Generate colors with high brightness that are visible on black background
+			// Avoid dark colors by ensuring at least one RGB component is > 128
+			var r, g, b;
+			do {
+				r = Math.floor(Math.random() * 256);
+				g = Math.floor(Math.random() * 256);
+				b = Math.floor(Math.random() * 256);
+				// Ensure overall brightness is sufficient
+			} while ((r + g + b) < 300 || Math.max(r, g, b) < 128);
+
+			return '#' + [r, g, b].map(function(x) { return x.toString(16).padStart(2, '0'); }).join('');
+		},
 		"default" : "#e562ce", // Interesting color, but overriden
 		"new-value" : null
 	}
@@ -49,7 +61,7 @@ var tangle = new Tangle(document.getElementById('panel'), {
 		this.scale =  parameters.scale.default;
 		this.earthVelocity = parameters.earthVelocity.default;
 		this.venusVelocity = parameters.venusVelocity.default;
-		this.earthOrbitRadius = parameters.earthOrbitRadius.default; 
+		this.earthOrbitRadius = parameters.earthOrbitRadius.default;
 		this.venusOrbitRadius = parameters.venusOrbitRadius.default;
 	},
 	update: function () {
@@ -76,7 +88,7 @@ function randomNumRange(){
 	return Math.floor(Math.random() * this.end) + this.start;
 }
 
-// Event Listener added for randomizing checkbox 
+// Event Listener added for randomizing checkbox
 (function(){
 	document.getElementById("random-all").addEventListener("click", function(e){
 		// Iterate over all parameters generating their respective random value.
@@ -96,7 +108,7 @@ function randomNumRange(){
 				tangle.setValue(parameter, parameters[parameter].default);
 				parameters[parameter]["new-value"] = null;
 			}
-			// Rerender the visualization with the new updated values.  
+			// Rerender the visualization with the new updated values.
 			reset();
 		}
 	})
@@ -112,7 +124,7 @@ function calcXY(angle, radius, offsetX, offsetY) {
 }
 
 var paper = new Raphael('container', width, height);
-				
+
 var earthAngle = 0,
 				venusAngle = 0;
 
